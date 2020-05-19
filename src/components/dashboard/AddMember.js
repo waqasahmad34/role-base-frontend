@@ -16,7 +16,6 @@ const AddMember = ({ history }) => {
 
 	const handleAddMember = (e) => {
 		e.preventDefault();
-
 		axios
 			.post(
 				'https://role-base-backend.herokuapp.com/api/users/addMember',
