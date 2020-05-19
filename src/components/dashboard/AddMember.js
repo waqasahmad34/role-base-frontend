@@ -19,7 +19,7 @@ const AddMember = ({ history }) => {
 
 		axios
 			.post(
-				'http://localhost:5000/api/users/addMember',
+				'https://role-base-backend.herokuapp.com/api/users/addMember',
 				{
 					name,
 					email,
