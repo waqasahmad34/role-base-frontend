@@ -21,7 +21,7 @@ const Register = ({ history }) => {
 		e.preventDefault();
         axios
         .post(
-            'http://localhost:5000/api/users/register',
+            'https://role-base-backend.herokuapp.com/api/users/register',
             {
                 name,
                 email,
