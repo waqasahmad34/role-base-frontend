@@ -18,12 +18,12 @@ const AddMember = ({ history }) => {
 		e.preventDefault();
 		axios
 			.post(
-				'https://role-base-backend.herokuapp.com/api/users/addMember',
+				'https://role-base-backend.herokuapp.com/api/users/sendRegistrationLinkEmail',
 				{
-					name,
+					//name,
 					email,
-					phoneNumber,
-					password,
+					// phoneNumber,
+					// password,
 					c,
 					r,
 					u,
@@ -37,7 +37,7 @@ const AddMember = ({ history }) => {
 				}
 			)
 			.then((response) => {
-				const { token, id, name, email, create, read, del, update, role } = response && response.data;
+				//const { token, id, name, email, create, read, del, update, role } = response && response.data;
 				// localStorage.setItem('accessToken', token);
 				// localStorage.setItem('userId', id);
 				// localStorage.setItem('name', name);
@@ -62,7 +62,7 @@ const AddMember = ({ history }) => {
 			{localStorage.getItem('create') === 'true' ? (
 				<form onSubmit={handleAddMember}>
 					<label htmlFor="name">Full name:</label>
-					<input required type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+					<input disabled required type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
 					<br />
 					<label htmlFor="email">Email:</label>
 					<input
@@ -75,6 +75,7 @@ const AddMember = ({ history }) => {
 					<br />
 					<label htmlFor="phone">Phone Number:</label>
 					<input
+						disabled
 						required
 						type="text"
 						name="phoneNumber"
@@ -84,6 +85,7 @@ const AddMember = ({ history }) => {
 					<br />
 					<label htmlFor="password">Password:</label>
 					<input
+						disabled
 						required
 						type="password"
 						name="password"
